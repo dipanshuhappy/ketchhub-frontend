@@ -19,12 +19,12 @@ import MainLayout from "../layout/MainLayout";
 function LoginPage() {
   return (
     <MainLayout>
-      <Flex minHeight={"100vh"} width={"100%"}>
+      <Flex minHeight={"100vh"} width={"100%"} justifyContent="space-around">
         <Center>
           <TriFoodPic />
         </Center>
         <Center>
-          <Stack spacing={8}>
+          <Stack spacing={5}>
             <Text fontSize="6xl" textStyle={"h1"}>
               KITCHUB
             </Text>
@@ -44,7 +44,8 @@ function LoginPage() {
               Forgot Password ?
             </Text>
             <Text>
-              Hey! , you a new foodie ? Then <Link>Sign Up</Link> now
+              Hey! , you a new foodie ? Then{" "}
+              <Link href="./sign-up">Sign Up</Link> now
             </Text>
           </Stack>
         </Center>
