@@ -18,9 +18,7 @@ function TriFoodPic() {
           <Image src={food2} />
         </GridItem>
         <GridItem justifySelf={"center"} colSpan={2}>
-          <Center>
-            <Image src={food3} />
-          </Center>
+          <Image src={food3} />
         </GridItem>
       </Grid>
     </>
