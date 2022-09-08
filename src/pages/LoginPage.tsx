@@ -13,10 +13,15 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import TriFoodPic from "../components/TriFoodPic";
 import MainLayout from "../layout/MainLayout";
 
 function LoginPage() {
+  const navigate = useNavigate();
+  const onLoginClick = () => {
+    navigate("/dashboard");
+  };
   return (
     <MainLayout>
       <Flex minHeight={"100vh"} width={"100%"} justifyContent="space-around">
@@ -39,7 +44,7 @@ function LoginPage() {
             <Text>Let's find Yummy Food!</Text>
             <Input width={"22em"} variant="filled" placeholder="Email" />
             <Input width={"22em"} variant="filled" placeholder="Password" />
-            <Button>Login</Button>
+            <Button onClick={onLoginClick}>Login</Button>
             <Text fontWeight={"bold"} as="u">
               Forgot Password ?
             </Text>
