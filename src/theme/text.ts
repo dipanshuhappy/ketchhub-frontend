@@ -5,4 +5,9 @@ export const Text: ComponentStyleConfig = {
   baseStyle: {
     color: colors.brand[200],
   },
+  variants: {
+    dark: {
+      color: "black",
+    },
+  },
 };

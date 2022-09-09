@@ -5,7 +5,10 @@ import PostIcon from "./PostIcon";
 
 function PostButtons() {
   return (
-    <Flex justifyContent={"space-evenly"} alignItems={"center"}>
+    <Flex
+      justifyContent={{ base: "space-between", lg: "space-evenly" }}
+      alignItems={"center"}
+    >
       <Button
         width={"140px"}
         height={"100px"}
