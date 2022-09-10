@@ -14,8 +14,11 @@ import React from "react";
 import { BiSearch } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import colors from "../theme/colors";
-
-function SearchBar() {
+type SearchBarProps = {
+  value: string;
+  onChange: Function;
+};
+function SearchBar({ value, onChange }: SearchBarProps) {
   const navigate = useNavigate();
 
   return (
@@ -29,7 +32,13 @@ function SearchBar() {
           pointerEvents="none"
           children={<BiSearch color={colors.brand[200]} />}
         />
-        <Input placeholder="Search" />
+        <Input
+          value={value}
+          onChange={(event) => {
+            onChange(event.target.value);
+          }}
+          placeholder="Search"
+        />
       </InputGroup>
       <Box>
         <Stack direction="row" alignItems={"center"}>

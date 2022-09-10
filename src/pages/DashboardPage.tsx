@@ -48,7 +48,7 @@ function DashboardPage() {
   const [isMobile] = useMediaQuery("(max-width: 768px)");
   return (
     <MainLayout>
-      <SearchBar />
+      <SearchBar value="" onChange={() => {}} />
       <Box
         marginInline={"auto"}
         width={{ base: "100%", lg: "50%" }}
