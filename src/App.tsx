@@ -6,6 +6,7 @@ import SignUpPage from "./pages/SignUpPage";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import theme from "./theme";
 import DashboardPage from "./pages/DashboardPage";
+import SearchPage from "./pages/SearchPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/search" element={<SearchPage />} />
           <Route path="/" element={<LoginPage />} />
         </Routes>
       </BrowserRouter>

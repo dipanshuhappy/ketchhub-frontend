@@ -12,12 +12,19 @@ import {
 // import { Box } from "framer-motion";
 import React from "react";
 import { BiSearch } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 import colors from "../theme/colors";
 
 function SearchBar() {
+  const navigate = useNavigate();
+
   return (
     <Flex>
-      <InputGroup marginTop={"1em"} variant="flushed">
+      <InputGroup
+        marginTop={"1em"}
+        onClick={() => navigate("/search")}
+        variant="flushed"
+      >
         <InputLeftElement
           pointerEvents="none"
           children={<BiSearch color={colors.brand[200]} />}
