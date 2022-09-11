@@ -35,11 +35,44 @@ const post = {
 function SearchPage() {
   const [searchItem, setSearchItem] = useState("");
   const [searchItems, setSearchItems] = useState<string[]>([]);
+  const [ingridients, setIngridients] = useState<string[]>([]);
   return (
     <MainLayout>
-      <SearchBar value={searchItem} onChange={setSearchItem} />
+      <SearchBar
+        value={searchItem}
+        onChange={(newValue: any) => {
+          setIngridients(newValue);
+        }}
+      />
       <Center marginTop={"1.5"}>
-        <Button>Search Food</Button>
+        <Button
+          onClick={() => {
+            const a = ingridients.map((value: any) => {
+              return value.value;
+            });
+            fetch("http://127.0.0.1:5000/search", {
+              // Adding method type
+              method: "POST",
+
+              // Adding body or contents to send
+              body: JSON.stringify({
+                ingredients: ["onion", "green chillies", "potato"],
+              }),
+
+              // Adding headers to the request
+              headers: {
+                "Content-type": "application/json; charset=UTF-8",
+              },
+            })
+              .then((response) => response.json())
+
+              // Displaying results to console
+              .then((json) => console.log(json));
+            console.log(ingridients);
+          }}
+        >
+          Search Food
+        </Button>
       </Center>
       <Wrap justify={"center"} align={"center "} margin={"4"}>
         {searchItems.map((item, index) => (
@@ -77,9 +110,9 @@ function SearchPage() {
         gap={8}
         p={8}
       >
+        {/* <RecipePostView width="50%" post={post} />
         <RecipePostView width="50%" post={post} />
-        <RecipePostView width="50%" post={post} />
-        <RecipePostView width="50%" post={post} />
+        <RecipePostView width="50%" post={post} /> */}
       </Grid>
     </MainLayout>
   );

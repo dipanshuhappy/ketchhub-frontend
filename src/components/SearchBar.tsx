@@ -9,20 +9,22 @@ import {
   Text,
   Box,
 } from "@chakra-ui/react";
-import { Select } from "chakra-react-select";
+import { ActionMeta, MultiValue, Select } from "chakra-react-select";
 // import { Box } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { options } from "../constants";
 import colors from "../theme/colors";
 type SearchBarProps = {
   value: string;
-  onChange: Function;
+  onChange: (
+    newValue: MultiValue<{ label: string; value: string }>,
+    actionMeta: ActionMeta<{ label: string; value: string }>
+  ) => void;
 };
 function SearchBar({ value, onChange }: SearchBarProps) {
   const navigate = useNavigate();
-
   return (
     <Flex>
       <InputGroup
@@ -35,6 +37,7 @@ function SearchBar({ value, onChange }: SearchBarProps) {
         variant="flushed"
       >
         <Select
+          onChange={onChange}
           colorScheme="red"
           className="search-bar"
           options={options}
