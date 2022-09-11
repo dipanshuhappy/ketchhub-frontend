@@ -15,11 +15,12 @@ import {
 } from "@chakra-ui/react";
 type RecipePostPropType = {
   post: RecipePost;
+  width: string;
 };
-function RecipePostView({ post }: RecipePostPropType) {
+function RecipePostView({ post, width }: RecipePostPropType) {
   return (
     <Box
-      width={"80%"}
+      width={width}
       borderWidth="1px"
       borderRadius="lg"
       borderColor={"brand.200"}

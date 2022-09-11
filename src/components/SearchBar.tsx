@@ -9,10 +9,12 @@ import {
   Text,
   Box,
 } from "@chakra-ui/react";
+import { Select } from "chakra-react-select";
 // import { Box } from "framer-motion";
 import React from "react";
 import { BiSearch } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
+import { options } from "../constants";
 import colors from "../theme/colors";
 type SearchBarProps = {
   value: string;
@@ -25,19 +27,19 @@ function SearchBar({ value, onChange }: SearchBarProps) {
     <Flex>
       <InputGroup
         marginTop={"1em"}
-        onClick={() => navigate("/search")}
+        onClick={() => {
+          if (!window.location.href.includes("/search")) {
+            navigate("/search");
+          }
+        }}
         variant="flushed"
       >
-        <InputLeftElement
-          pointerEvents="none"
-          children={<BiSearch color={colors.brand[200]} />}
-        />
-        <Input
-          value={value}
-          onChange={(event) => {
-            onChange(event.target.value);
-          }}
-          placeholder="Search"
+        <Select
+          colorScheme="red"
+          className="search-bar"
+          options={options}
+          isMulti
+          size="lg"
         />
       </InputGroup>
       <Box>

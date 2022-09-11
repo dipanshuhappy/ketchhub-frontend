@@ -67,22 +67,22 @@ function DashboardPage() {
 
         <GridItem marginTop={"16"} justifySelf={"start"}>
           <VStack spacing={16}>
-            <RecipePostView post={post} />
-            <RecipePostView post={post} />
-            <RecipePostView post={post} />
-            <RecipePostView post={post} />
-            <RecipePostView post={post} />
-            <RecipePostView post={post} />
-            <RecipePostView post={post} />
-            <RecipePostView post={post} />
-            <RecipePostView post={post} />
-            <RecipePostView post={post} />
-            <RecipePostView post={post} />
-            <RecipePostView post={post} />
-            <RecipePostView post={post} />
-            <RecipePostView post={post} />
-            <RecipePostView post={post} />
-            <RecipePostView post={post} />
+            <RecipePostView width={"80%"} post={post} />
+            <RecipePostView width={"80%"} post={post} />
+            <RecipePostView width={"80%"} post={post} />
+            <RecipePostView width={"80%"} post={post} />
+            <RecipePostView width={"80%"} post={post} />
+            <RecipePostView width={"80%"} post={post} />
+            <RecipePostView width={"80%"} post={post} />
+            <RecipePostView width={"80%"} post={post} />
+            <RecipePostView width={"80%"} post={post} />
+            <RecipePostView width={"80%"} post={post} />
+            <RecipePostView width={"80%"} post={post} />
+            <RecipePostView width={"80%"} post={post} />
+            <RecipePostView width={"80%"} post={post} />
+            <RecipePostView width={"80%"} post={post} />
+            <RecipePostView width={"80%"} post={post} />
+            <RecipePostView width={"80%"} post={post} />
           </VStack>
         </GridItem>
       </Grid>
